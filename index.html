@@ -3,13 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Encriptador de mensaje</title>
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu" rel="stylesheet">
     <!-- Estilos -->
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <h1>Desafio Challengn</h1>
+    <div class="contenedor-principal">
+        <header>
+            <h1 class="logo">a</h1>
+        </header>
+        <main>
+            <section class="entrada">
+                <div class="texto">
+                    <textarea class="txt" id="mensaje" cols="30" rows="10" placeholder="Ingresa el texto aqui"></textarea>
+                </div>
+                <div class="contenedor-botones">
+                    <p>Solo letras minúsculas y sin acentos</ñ>
+                    <div class="botones">
+                        <button class="btn btn-primario" onclick="cifrar()">Cifrar Mensaje</button>
+                        <button class="btn btn-secundario" onclick="descifrar()">Descifrar Mensaje</button>
+                    </div>
+                </div>
+            </section>
+            <section class="salida">
+                <div class="mensaje">
+                    <img src="" alt="imagen">
+                    <h5>Ningún mensaje fue encontrado</h5>
+                    <p>Ingresa el texto que desees encriptar o desencriptar</p>
+                </div>
+                <div class="contenedor-salida">
+                    <textarea class="txt" id="encriptado" cols="30" rows="10"></textarea>
+                    <div class="boton">
+                        <button class="btn"> Copiar</button>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    <footer>
+        © 2024  - Alura Latam - JOSÉ CASTRO DE LA TORRE
+    </footer>
     <!-- javascript -->
     <script src="js/script.js"></script>
 </body>
