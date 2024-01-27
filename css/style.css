@@ -149,11 +149,23 @@ main section.salida {
     border-radius: 1rem;
 }
 section.salida .mensaje{
-    display: none;
+    /* display: none; */
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+}
+
+
+section.salida .mensaje h3, section.salida .mensaje p{
+    padding: 5px 0;
+    text-align: center;
 }
 
 .salida .contenedor-salida{
     height: 100%;
+    display: none;
 }
 
 .salida .contenedor-salida .texto{
@@ -167,4 +179,17 @@ section.salida .mensaje{
 
 .salida .contenedor-salida .boton .btn:hover{
     background: #0a387113;
+}
+
+@media (max-width: 992px){
+    section.salida .mensaje img{
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px){
+    section.salida .mensaje img{
+        /* width: 100%; */
+        display: none;
+    }
 }
