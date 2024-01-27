@@ -45,7 +45,7 @@ header .logo {
 
 main {
     width: 100%;
-    padding: 2rem 0;
+    padding: 1rem 0;
     display: flex;
     font-size: 1rem;
 }
@@ -60,6 +60,7 @@ main section {
     width: 100%;
     height: 100%;
     font-size: 1rem;
+    resize: none;
     background-color: transparent;
     border: solid transparent;
     border-width: 0;
@@ -69,7 +70,7 @@ main section {
 .btn {
     display: inline-block;
     padding: 0.45rem 0.75rem;
-    font-size: .9rem;
+    font-size: 1rem;
     font-weight: 400;
     line-height: 1.5;
     color: var(--bg-texto);
@@ -112,14 +113,15 @@ main section {
 
 main section.entrada {
     width: 60%;
+    padding: 1rem;
 }
 
 .entrada .texto {
-    height: calc(100% - 80px);
+    height: calc(100% - 83.4px);
 }
 .entrada .texto .txt, .entrada .texto .txt::placeholder{
     font-size: 1.5em;
-    color: #0A3871;
+    color: hsl(213, 84%, 24%);
 }
 .entrada .contenedor-botones p{
     padding-top: 1rem;
@@ -128,8 +130,7 @@ main section.entrada {
 
 }
 .contenedor-botones .botones{
-    padding: 5px 0;
-    /* text-align:  center; */
+    padding-top: 5px;
     display: flex;
     justify-content: space-around;
 }
@@ -141,4 +142,29 @@ main section.entrada {
 
 main section.salida {
     width: 40%;
+    height: 100%;
+    padding: 1rem;
+    background-color: var(--bg-blanco);
+    box-shadow: 0 0 5px #00000037;
+    border-radius: 1rem;
+}
+section.salida .mensaje{
+    display: none;
+}
+
+.salida .contenedor-salida{
+    height: 100%;
+}
+
+.salida .contenedor-salida .texto{
+    height: calc(100% - 55.6px);
+}
+.salida .contenedor-salida .boton .btn{
+    margin-top: 10px;
+    width: 100%;
+    padding: .7rem;
+}
+
+.salida .contenedor-salida .boton .btn:hover{
+    background: #0a387113;
 }
