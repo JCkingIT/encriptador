@@ -67,14 +67,12 @@ function limpiar() {
     document.querySelector('.limpiar').classList.add("ocultar");
 }
 
-//Evento para mostrar boton de limpiar
-document.getElementById("mensaje").addEventListener('keyup', (event) => {
+// Evento para aceptar solo letras miniscular y nuemeros
+document.getElementById("mensaje").addEventListener('keypress', (event) => {
     const icon = document.querySelector(".limpiar");
     event.target.value == "" ? icon.classList.add("ocultar") : icon.classList.remove("ocultar");
-});
+    event.target.value = event.target.value.toLowerCase();
 
-//Evento para aceptar solo letras miniscular y nuemeros
-document.getElementById("mensaje").addEventListener('keypress', (event) => {
     let caracter = new RegExp("^[a-z0-9(). ]+$");
     let key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
     if (!caracter.test(key)) {
