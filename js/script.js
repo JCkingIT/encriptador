@@ -1,3 +1,4 @@
+
 imagen();
 window.addEventListener("resize", imagen);
 
@@ -8,16 +9,28 @@ function imagen() {
 }
 
 function encriptar() {
-    const mensaje = document.getElementById("mensaje");
-    let texto = mensaje.value.replace(/a/gi, "ai")
+    const mensaje = document.getElementById("mensaje").value;
+    let texto = mensaje
         .replace(/e/gi, "enter")
         .replace(/i/gi, "imes")
+        .replace(/a/gi, "ai")
         .replace(/o/gi, "ober")
         .replace(/u/gi, "ufat");
-    mostrar_mensaje(texto);
+    mostrarMensaje(texto);
 }
 
-function mostrar_mensaje(texto) {
+function desencriptar() {
+    const mensaje = document.getElementById("mensaje").value;
+    let texto = mensaje
+        .replace(/enter/gi, "e")
+        .replace(/imes/gi, "i")
+        .replace(/ai/gi, "a")
+        .replace(/ober/gi, "o")
+        .replace(/ufat/gi, "u");
+    mostrarMensaje(texto);
+}
+
+function mostrarMensaje(texto = "") {
     const contenedorImagen = document.querySelector(".contenedor-mensaje");
     let contenedorMensaje = document.querySelector(".contenedor-salida");
     const mensajeCifrado = document.getElementById("encriptado");
@@ -36,3 +49,36 @@ function mostrar_mensaje(texto) {
         mensajeCifrado.innerText = texto;
     }
 }
+
+const copiar = async () => {
+    const texto = document.getElementById("encriptado").value;
+    navigator.clipboard.writeText(texto);
+    Swal.fire({
+        title: 'Texto copiado',
+        icon: 'success',
+        showConfirmButton: false,
+        timer: 1000
+    })
+}
+
+function limpiar() {
+    document.getElementById('mensaje').value = "";
+    mostrarMensaje();
+    document.querySelector('.limpiar').classList.add("ocultar");
+}
+
+//Evento para mostrar boton de limpiar
+document.getElementById("mensaje").addEventListener('keyup', (event) => {
+    const icon = document.querySelector(".limpiar");
+    event.target.value == "" ? icon.classList.add("ocultar") : icon.classList.remove("ocultar");
+});
+
+//Evento para aceptar solo letras miniscular y nuemeros
+document.getElementById("mensaje").addEventListener('keypress', (event) => {
+    let caracter = new RegExp("^[a-z0-9(). ]+$");
+    let key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+    if (!caracter.test(key)) {
+        event.preventDefault();
+        return false;
+    }
+});

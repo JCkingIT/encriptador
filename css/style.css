@@ -118,10 +118,33 @@ main section.entrada {
 
 .entrada .texto {
     height: calc(100% - 83.4px);
+    position: relative;
 }
 .entrada .texto .txt, .entrada .texto .txt::placeholder{
     font-size: 1.5em;
-    color: hsl(213, 84%, 24%);
+    color: #0a3871;
+}
+.entrada .texto .limpiar{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 40px;
+    height: 40px;
+    background-color: #216ac2;
+    opacity: 0.4;
+    border: none;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 1rem;
+    box-shadow: 0 0 5px #0d2c53;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .6s opacity;
+}
+.entrada .texto .limpiar:hover{
+    opacity: 1;
+    cursor: pointer;
 }
 
 .entrada .contenedor-botones .alerta{
@@ -163,7 +186,7 @@ section.salida .contenedor-mensaje{
 
 section.salida .contenedor-mensaje img{
     max-width: 300px;
-    margin: auto;
+    margin: 0 auto;
 }
 
 section.salida .contenedor-mensaje h3, section.salida .contenedor-mensaje p{
@@ -202,11 +225,11 @@ footer{
 }
 
 .mostrar{
-    display: flex ;
+    display: flex;
 }
 
 .ocultar {
-    display: none;
+    display: none !important;
 }
 
 @media (max-width: 992px){
