@@ -19,22 +19,26 @@
                     <textarea class="txt" id="mensaje" cols="30" rows="10" placeholder="Ingresa el texto aqui"></textarea>
                 </div>
                 <div class="contenedor-botones">
-                    <p>Solo letras minúsculas y sin acentos</ñ>
+                    <div class="alerta">
+                        <img src="img/icon.png">
+                        <p>Solo letras minúsculas y sin acentos</ñ>
+                    </div>
                     <div class="botones">
-                        <button class="btn btn-primario" onclick="cifrar()">Cifrar Mensaje</button>
-                        <button class="btn btn-secundario" onclick="descifrar()">Descifrar Mensaje</button>
+                        <button class="btn btn-primario" onclick="encriptar()">Emcriptar</button>
+                        <button class="btn btn-secundario" onclick="descifrar()">Desencriptar</button>
                     </div>
                 </div>
             </section>
             <section class="salida">
-                <div class="mensaje">
-                    <img src="img/Muñeco.png" alt="imagen">
+                <div class="contenedor-mensaje mostrar">
+                    <img id="img-munieco"  alt="imagen de Muñeco" width="300px">
                     <h3>Ningún mensaje fue encontrado</h3>
                     <p>Ingresa el texto que desees encriptar o desencriptar</p>
                 </div>
-                <div class="contenedor-salida">
+                <div class="contenedor-salida ocultar">
                     <div class="texto">
-                        <textarea class="txt" id="encriptado" disabled></textarea>
+                        <textarea class="txt" id="encriptado">
+                        </textarea>
                     </div>
                     <div class="boton">
                         <button class="btn"> Copiar</button>
@@ -44,7 +48,7 @@
         </main>
     </div>
     <footer>
-        © 2024  - Alura Latam - JOSÉ CASTRO DE LA TORRE
+        © 2024  - Alura Latam - JOSÉ ISRAEL CASTRO DE LA TORRE
     </footer>
     <!-- javascript -->
     <script src="js/script.js"></script>
